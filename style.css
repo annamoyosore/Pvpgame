@@ -1,0 +1,34 @@
+body {
+  font-family: Arial;
+  text-align: center;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(15, 35px);
+  gap: 2px;
+  justify-content: center;
+}
+
+.cell {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #333;
+  line-height: 35px;
+}
+
+.tile {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background: orange;
+  margin: 3px;
+  line-height: 35px;
+  cursor: grab;
+}
+
+#chatBox {
+  height: 120px;
+  overflow-y: scroll;
+  border: 1px solid #333;
+}
