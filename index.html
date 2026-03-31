@@ -4,32 +4,15 @@
   <meta charset="UTF-8">
   <title>Scrabble Pro - Join</title>
 </head>
-
 <body>
+
 <h2>🌍 Scrabble Pro</h2>
 
 <input id="username" placeholder="Username">
 <input id="gameId" placeholder="Game ID">
-<button onclick="joinGame()">Join Game</button>
+<button id="joinBtn">Join Game</button>
 
-<script>
-function joinGame() {
-  const username = document.getElementById('username').value.trim();
-  const gameId = document.getElementById('gameId').value.trim();
-
-  if(!username || !gameId){
-    alert("Enter username and game ID");
-    return;
-  }
-
-  // Store in localStorage to pass to dashboard
-  localStorage.setItem("username", username);
-  localStorage.setItem("gameId", gameId);
-
-  // Redirect to dashboard
-  window.location.href = "dashboard.html";
-}
-</script>
-
+<script src="js/appwrite.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
