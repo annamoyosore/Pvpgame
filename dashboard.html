@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Scrabble Pro - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>🌍 Scrabble Pro Dashboard</h2>
+<h3 id="turnInfo"></h3>
+
+<div id="board"></div>
+
+<h3>Your Tiles</h3>
+<div id="rack"></div>
+
+<button onclick="submitMove()">Submit Move</button>
+
+<h3>💬 Chat</h3>
+<div id="chatBox"></div>
+<input id="chatInput">
+<button onclick="sendMessage()">Send</button>
+
+<script src="https://cdn.jsdelivr.net/npm/appwrite@13.0.0"></script>
+<script src="js/appwrite.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
