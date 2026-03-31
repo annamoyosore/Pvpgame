@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Scrabble Pro - Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 <h2>🌍 Scrabble Pro Dashboard</h2>
+
+<!-- Scoreboard -->
+<div id="scoreboard" style="margin-bottom: 10px;">
+  <h3>Scores & Wallet</h3>
+  <div id="scoresList"></div>
+</div>
+
+<!-- Turn info -->
 <h3 id="turnInfo"></h3>
 
+<!-- Scrabble board -->
 <div id="board"></div>
 
+<!-- Player rack -->
 <h3>Your Tiles</h3>
 <div id="rack"></div>
 
+<!-- Submit move -->
 <button onclick="submitMove()">Submit Move</button>
 
+<!-- Chat -->
 <h3>💬 Chat</h3>
-<div id="chatBox"></div>
-<input id="chatInput">
+<div id="chatBox" style="margin-bottom: 5px;"></div>
+<input id="chatInput" placeholder="Type your message">
 <button onclick="sendMessage()">Send</button>
 
+<!-- JS Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/appwrite@13.0.0"></script>
 <script src="js/appwrite.js"></script>
 <script src="js/dashboard.js"></script>
