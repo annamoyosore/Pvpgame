@@ -3,43 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <title>Scrabble Pro - Dashboard</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f0f0f0; }
+    #board {
+      display: grid;
+      grid-template-columns: repeat(15, 40px);
+      grid-template-rows: repeat(15, 40px);
+      margin: 10px auto;
+      gap: 2px;
+      background: #0a2a4f;
+      padding: 5px;
+      width: fit-content;
+    }
+    .board-cell {
+      width: 40px;
+      height: 40px;
+      background: #eee;
+      border: 1px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #000;
+    }
+    #rack { display: flex; justify-content: center; margin: 10px auto; }
+    .tile {
+      width: 40px; height: 40px;
+      background: #FFD700;
+      margin: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: grab;
+      border: 1px solid #333;
+    }
+    #chatBox { border:1px solid #ccc; height:150px; width:90%; max-width:500px; margin:10px auto; overflow-y:auto; background:#fff; padding:5px; text-align:left;}
+  </style>
 </head>
 <body>
 
 <h2>🌍 Scrabble Pro Dashboard</h2>
 
-<!-- Scoreboard -->
-<div id="scoreboard" style="margin-bottom: 10px;">
+<div id="scoreboard">
   <h3>Scores & Wallet</h3>
   <div id="scoresList"></div>
 </div>
 
-<!-- Turn info -->
 <h3 id="turnInfo"></h3>
 
-<!-- Scrabble board container -->
-<div id="board" style="display:grid; justify-content:center; margin: 10px 0;"></div>
+<!-- Board -->
+<div id="board"></div>
 
-<!-- Player rack -->
 <h3>Your Tiles</h3>
-<div id="rack" style="display:flex; justify-content:center;"></div>
+<div id="rack"></div>
 
-<!-- Submit move -->
 <button onclick="submitMove()">Submit Move</button>
 
-<!-- Chat -->
 <h3>💬 Chat</h3>
-<div id="chatBox" style="border:1px solid #ccc; height:150px; width:60%; margin:10px auto; overflow-y:auto; background:#fff; padding:5px;"></div>
+<div id="chatBox"></div>
 <input id="chatInput" placeholder="Type your message">
 <button onclick="sendMessage()">Send</button>
 
-<!-- JS Scripts -->
+<!-- Appwrite & JS -->
 <script src="https://cdn.jsdelivr.net/npm/appwrite@13.0.0"></script>
 <script src="js/appwrite.js"></script>
 
-<!-- Ensure JS runs after DOM loaded -->
+<!-- Ensure dashboard.js runs after DOM -->
 <script>
   document.addEventListener("DOMContentLoaded", function(){
     const script = document.createElement("script");
