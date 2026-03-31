@@ -2,35 +2,34 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Scrabble Pro</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+  <title>Scrabble Pro - Join</title>
 </head>
 
 <body>
-
 <h2>🌍 Scrabble Pro</h2>
 
 <input id="username" placeholder="Username">
 <input id="gameId" placeholder="Game ID">
 <button onclick="joinGame()">Join Game</button>
 
-<h3 id="turnInfo"></h3>
+<script>
+function joinGame() {
+  const username = document.getElementById('username').value.trim();
+  const gameId = document.getElementById('gameId').value.trim();
 
-<div id="board"></div>
+  if(!username || !gameId){
+    alert("Enter username and game ID");
+    return;
+  }
 
-<h3>Your Tiles</h3>
-<div id="rack"></div>
+  // Store in localStorage to pass to dashboard
+  localStorage.setItem("username", username);
+  localStorage.setItem("gameId", gameId);
 
-<button onclick="submitMove()">Submit Move</button>
-
-<h3>💬 Chat</h3>
-<div id="chatBox"></div>
-<input id="chatInput">
-<button onclick="sendMessage()">Send</button>
-
-<script src="https://cdn.jsdelivr.net/npm/appwrite@13.0.0"></script>
-<script src="app.js"></script>
+  // Redirect to dashboard
+  window.location.href = "dashboard.html";
+}
+</script>
 
 </body>
 </html>
