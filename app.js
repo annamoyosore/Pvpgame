@@ -1,10 +1,10 @@
 // APPWRITE CONFIG
 const client = new Appwrite.Client()
   .setEndpoint("https://nyc.cloud.appwrite.io/v1")
-  .setProject("YOUR_PROJECT_ID");
+  .setProject("696f9104001dfedc5e1a");
 
 const db = new Appwrite.Databases(client);
-const DB = "YOUR_DATABASE_ID";
+const DB = "69cb505d0015fbe8a669";
 
 let username = "";
 let gameId = "";
